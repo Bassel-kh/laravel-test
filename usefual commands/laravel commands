@@ -25,3 +25,10 @@ php artisan breeze:install
 
 npm install
 npm run dev
+
+php artisan db:seed
+
+php artisan make:seeder AdminSeeder
+
+// to add new column to table in database
+php artisan make:migration add_is_admin_to_users_table
