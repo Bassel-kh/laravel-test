@@ -18,3 +18,10 @@ php .\artisan make:controller Controller_name
 php .\artisan make:model Model_name
 
 php .\artisan make:model Post -m
+
+composer require laravel/breeze
+
+php artisan breeze:install
+
+npm install
+npm run dev
