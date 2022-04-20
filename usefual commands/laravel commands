@@ -1,0 +1,20 @@
+composer global require laravel/installer
+
+laravel new example-app --github="--public" --organization="laravel"
+
+
+
+1- php artisan serve
+2- php artisan make:migra
+
+php .\artisan migrate
+
+php .\artisan make:migration create_categories_table
+
+php .\artisan migrate:rollback
+
+php .\artisan make:controller Controller_name
+
+php .\artisan make:model Model_name
+
+php .\artisan make:model Post -m
