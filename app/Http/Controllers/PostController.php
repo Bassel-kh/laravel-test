@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -39,7 +40,13 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+//    public function store(Request $request){
+//        $request->validate([
+//        'title'=>'required',
+//        'post_text'=>'required',
+//        'category_id'=>'required',
+//        ]);
+    public function store(StorePostRequest $request)
     {
         Post::create([
             'title'=> $request->input('title'),

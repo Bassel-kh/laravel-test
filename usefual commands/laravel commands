@@ -39,3 +39,9 @@ php artisan make:middleware IsAdminMiddleware
 
 to test how many query we make on database we install package to monitor that:
  composer require barryvdh/laravel-debugbar
+
+to see the validation errors
+https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors
+
+to make request for custom form :
+php artisan make:request StorePostRequest

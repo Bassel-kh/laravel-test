@@ -9,23 +9,33 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+                    @if ($errors->any())
+                        <div class="text-amber-900">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li style="color: #bb2d3b" >{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <form method="POST" action="{{ route('posts.store') }}">
                         @csrf
                         Title:
                         <br/>
                         {{--                        <x-input name="name" value="{{ $category->name }}" />--}}
                         {{--                        <x-button type="submit">Save</x-button>--}}
-                        <input type="text" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        <input required type="text" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                name="title"/>
                         <br/><br/>
                         Post Text:
                         <br/>
-                        <textarea type="text" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        <textarea  type="text" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                   name="post_text" ></textarea>
                         <br/><br/>
                         Category:
                         <br/>
-                        <select class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        <select required class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 name="category_id">
                             @foreach($categories as $category)
                                 <option value="{{ $category->id }}"> {{ $category->name }} </option>
